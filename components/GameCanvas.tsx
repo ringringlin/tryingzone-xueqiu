@@ -1103,9 +1103,12 @@ Mimi`,
     <div className="relative w-full h-screen bg-[#0F172A] overflow-hidden select-none">
       <div ref={containerRef} className="absolute inset-0 z-0" />
       <div className="absolute top-6 left-6 z-10 pointer-events-none">
-          <div className="bg-white/90 backdrop-blur px-6 py-3 rounded-full shadow-lg border-2 border-white flex items-center gap-3">
-              <span className="text-2xl">🐾</span>
-              <span className="font-bold text-blue-900 text-lg">{gameState.score} / 4 Found</span>
+          {/* Glassmorphism Score Pill */}
+          <div className="relative overflow-hidden bg-white/10 backdrop-blur-xl px-6 py-3 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.2)] border border-white/20 flex items-center gap-3 group transition-all duration-300 hover:bg-white/15">
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none opacity-50"></div>
+              <span className="text-2xl relative z-10 drop-shadow-sm filter">🐾</span>
+              <span className="font-bold text-white text-lg relative z-10 tracking-wide drop-shadow-md">{gameState.score} / 4 Found</span>
           </div>
       </div>
       <div ref={guideRef} className="absolute top-1/2 left-1/2 z-20 hidden flex-row items-center justify-center pointer-events-none" style={{ width: '0px', height: '0px' }}>
